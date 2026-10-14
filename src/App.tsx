@@ -27,12 +27,12 @@ const AppContent: React.FC = () => {
   const { activeTab } = useShop();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#1A1816]">
+    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-[#1A1816] w-full max-w-full overflow-x-hidden">
       {/* Navigation Top Bar */}
       <Navbar />
 
       {/* Main Content Area */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {activeTab === 'home' && (
           <>
             <Hero />

@@ -170,12 +170,12 @@ export const ProductDetailModal: React.FC = () => {
                     <span className="uppercase tracking-wider font-semibold text-stone-700">Ring Size (Indian Standard)</span>
                     <span className="text-stone-400 text-[11px]">Complimentary Free Resizing</span>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap sm:flex-nowrap gap-1.5 sm:gap-2">
                     {['Size 10', 'Size 12', 'Size 14', 'Size 16', 'Size 18'].map((sz) => (
                       <button
                         key={sz}
                         onClick={() => setSelectedSize(sz)}
-                        className={`flex-1 py-1.5 text-xs rounded-sm border transition-colors ${
+                        className={`flex-1 min-w-[55px] py-1.5 text-xs rounded-sm border transition-colors ${
                           selectedSize === sz
                             ? 'border-[#1A1816] bg-[#1A1816] text-white font-semibold'
                             : 'border-stone-200 bg-white text-stone-700 hover:bg-stone-50'
@@ -189,7 +189,7 @@ export const ProductDetailModal: React.FC = () => {
               )}
 
               {/* Quantity and Actions */}
-              <div className="flex items-center gap-4 mb-4">
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-4 mb-4">
                 <div className="flex items-center border border-stone-200 rounded-sm">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}

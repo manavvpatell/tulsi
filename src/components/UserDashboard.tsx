@@ -111,7 +111,7 @@ export const UserDashboard: React.FC = () => {
         </div>
 
         {/* Tab Controls */}
-        <div className="flex border-b border-stone-200 mb-8 gap-8">
+        <div className="flex border-b border-stone-200 mb-6 sm:mb-8 gap-4 sm:gap-8 overflow-x-auto whitespace-nowrap pb-1">
           <button
             onClick={() => setActiveSubTab('orders')}
             className={`pb-3 text-xs uppercase tracking-widest font-semibold transition-colors relative flex items-center gap-2 ${
@@ -254,8 +254,8 @@ export const UserDashboard: React.FC = () => {
                       </div>
 
                       {/* Step Progress Tracker */}
-                      <div className="pt-6 pb-2">
-                        <div className="relative">
+                      <div className="pt-6 pb-2 overflow-x-auto">
+                        <div className="relative min-w-[320px] sm:min-w-0">
                           {/* Background line */}
                           <div className="absolute top-4 left-0 right-0 h-0.5 bg-stone-200 -z-0" />
                           {/* Active line */}

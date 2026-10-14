@@ -38,22 +38,22 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EAE6DF] transition-all">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EAE6DF] transition-all w-full max-w-full overflow-hidden">
       {/* Slim Top Announcement Strip */}
-      <div className="bg-[#1A1816] text-[#E6DEC8] text-[11px] py-1.5 px-4 tracking-wider uppercase">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+      <div className="bg-[#1A1816] text-[#E6DEC8] text-[10px] sm:text-[11px] py-1.5 px-3 sm:px-4 tracking-wider uppercase w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 truncate text-stone-300">
             <span className="hidden sm:inline text-stone-400">Complimentary 100% Insured Armored Delivery across India</span>
-            <span className="sm:hidden">Insured Armored Delivery</span>
+            <span className="sm:hidden font-medium truncate">100% Insured Delivery</span>
             <span className="text-[#C5A880]">·</span>
-            <span className="text-[#D4AF37] font-medium">Use Code ROYAL10 for 10% Off</span>
+            <span className="text-[#D4AF37] font-semibold whitespace-nowrap">Code: ROYAL10</span>
           </div>
 
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             {/* Pure INR Currency Display */}
-            <div className="flex items-center gap-1.5 text-stone-300">
-              <span className="text-[10px] text-stone-400">Currency:</span>
-              <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#C5A880] text-black font-semibold">
+            <div className="flex items-center gap-1 text-stone-300">
+              <span className="hidden sm:inline text-[10px] text-stone-400">Currency:</span>
+              <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#C5A880] text-black font-semibold whitespace-nowrap">
                 ₹ INR
               </span>
             </div>
@@ -70,19 +70,19 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
-        {/* Mobile Menu Button (Zone 1 on mobile) */}
-        <div className="flex items-center gap-3 lg:hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-6 w-full">
+        {/* Mobile Left: Hamburger menu & Search */}
+        <div className="flex items-center gap-1 sm:gap-2 lg:hidden shrink-0">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-stone-700 hover:text-stone-900 transition-colors"
+            className="p-1.5 text-stone-700 hover:text-stone-900 transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="p-2 text-stone-700 hover:text-stone-900 transition-colors"
+            className="p-1.5 text-stone-700 hover:text-stone-900 transition-colors"
             aria-label="Search catalog"
           >
             <Search className="w-4 h-4" />
@@ -90,15 +90,15 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Brand Zone (Wordmark) */}
-        <div className="text-center lg:text-left flex flex-col items-center lg:items-start shrink-0">
+        <div className="text-center flex flex-col items-center shrink min-w-0 px-1">
           <button 
             onClick={() => handleNavClick('home')}
-            className="group flex flex-col items-center lg:items-start"
+            className="group flex flex-col items-center max-w-[200px] sm:max-w-none"
           >
-            <span className="font-editorial text-2xl sm:text-3xl font-medium tracking-[0.2em] text-[#1A1816] uppercase">
+            <span className="font-editorial text-lg sm:text-2xl lg:text-3xl font-medium tracking-[0.12em] sm:tracking-[0.2em] text-[#1A1816] uppercase truncate w-full">
               TULSI JEWELLERS
             </span>
-            <span className="text-[9px] tracking-[0.35em] text-[#8C827A] uppercase -mt-1 font-sans">
+            <span className="text-[8px] sm:text-[9px] tracking-[0.25em] sm:tracking-[0.35em] text-[#8C827A] uppercase -mt-0.5 sm:-mt-1 font-sans truncate">
               Indian Fine Jewellery
             </span>
           </button>
@@ -139,20 +139,20 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Action Controls Zone */}
-        <div className="flex items-center gap-4 sm:gap-5 shrink-0">
-          {/* Search Button */}
+        <div className="flex items-center gap-1 sm:gap-3 shrink-0">
+          {/* Search Button (Desktop only; on mobile it's on the left next to menu) */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="hidden sm:flex items-center gap-2 p-2 text-stone-700 hover:text-stone-900 transition-colors"
+            className="hidden lg:flex items-center gap-2 p-2 text-stone-700 hover:text-stone-900 transition-colors"
             title="Search Necklaces, Rings & Earrings"
           >
             <Search className="w-4 h-4" />
           </button>
 
-          {/* User Account / Dashboard */}
+          {/* User Account / Dashboard (Desktop only; on mobile bottom bar has Orders) */}
           <button
             onClick={() => handleNavClick('dashboard')}
-            className={`p-2 transition-colors ${activeTab === 'dashboard' ? 'text-[#1A1816]' : 'text-stone-700 hover:text-stone-900'}`}
+            className={`hidden sm:block p-2 transition-colors ${activeTab === 'dashboard' ? 'text-[#1A1816]' : 'text-stone-700 hover:text-stone-900'}`}
             title="Customer Account & Order Tracking"
           >
             <User className="w-4 h-4" />
@@ -161,21 +161,21 @@ export const Navbar: React.FC = () => {
           {/* Automated Email Notifications Tray Button */}
           <button
             onClick={() => setIsEmailDrawerOpen(true)}
-            className="relative p-2 text-stone-700 hover:text-stone-900 transition-colors"
+            className="relative p-1.5 sm:p-2 text-stone-700 hover:text-stone-900 transition-colors"
             title="Automated Email Notifications (Order Confirmations & Tracking)"
           >
             <Mail className="w-4 h-4" />
             {unreadEmailCount > 0 && (
-              <span className="absolute top-1 right-1 flex items-center justify-center min-w-[16px] h-4 px-1 text-[10px] font-bold text-white bg-[#C5A880] rounded-full">
+              <span className="absolute top-0.5 right-0.5 flex items-center justify-center min-w-[15px] h-3.5 px-0.5 text-[9px] font-bold text-white bg-[#C5A880] rounded-full">
                 {unreadEmailCount}
               </span>
             )}
           </button>
 
-          {/* Wishlist Button */}
+          {/* Wishlist Button (Desktop only; on mobile bottom bar has Wishlist) */}
           <button
             onClick={() => setIsWishlistOpen(true)}
-            className="relative p-2 text-stone-700 hover:text-stone-900 transition-colors"
+            className="hidden sm:block relative p-2 text-stone-700 hover:text-stone-900 transition-colors"
             title="Wishlist"
           >
             <Heart className="w-4 h-4" />
@@ -189,11 +189,11 @@ export const Navbar: React.FC = () => {
           {/* Shopping Bag / Cart Button */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative p-2 text-stone-700 hover:text-stone-900 transition-colors flex items-center gap-1.5"
+            className="relative p-1.5 sm:p-2 text-stone-700 hover:text-stone-900 transition-colors flex items-center gap-1"
             title="Shopping Bag"
           >
             <ShoppingBag className="w-4 h-4" />
-            <span className="text-xs font-semibold tabular-nums text-stone-900">
+            <span className="text-[11px] sm:text-xs font-semibold tabular-nums text-stone-900">
               {cartCount}
             </span>
           </button>

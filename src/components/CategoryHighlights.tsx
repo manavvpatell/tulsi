@@ -79,11 +79,11 @@ export const CategoryHighlights: React.FC = () => {
               </div>
 
               {/* Minimal floating white pill label mirroring screenshot */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-6 py-2.5 rounded-sm shadow-sm border border-stone-200/60 text-center min-w-[170px] transition-all group-hover:bg-[#1A1816] group-hover:text-white">
-                <h3 className="font-editorial text-lg font-medium tracking-wide">
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-4 sm:px-6 py-2.5 rounded-sm shadow-sm border border-stone-200/60 text-center w-[85%] max-w-[200px] transition-all group-hover:bg-[#1A1816] group-hover:text-white">
+                <h3 className="font-editorial text-base sm:text-lg font-medium tracking-wide truncate">
                   {cat.title}
                 </h3>
-                <p className="text-[11px] tracking-wider uppercase text-stone-500 group-hover:text-stone-300">
+                <p className="text-[10px] sm:text-[11px] tracking-wider uppercase text-stone-500 group-hover:text-stone-300 truncate">
                   {cat.count}
                 </p>
               </div>

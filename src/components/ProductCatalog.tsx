@@ -127,7 +127,7 @@ export const ProductCatalog: React.FC = () => {
         </div>
 
         {/* Primary Category Switcher Tabs */}
-        <div className="flex items-center justify-center gap-2 sm:gap-4 border-b border-[#EAE6DF] pb-4 mb-8 overflow-x-auto">
+        <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-4 border-b border-[#EAE6DF] pb-4 mb-8 overflow-x-auto w-full">
           {[
             { id: 'all', label: 'All Collections', count: counts.all },
             { id: 'necklaces', label: 'Necklaces', count: counts.necklaces },

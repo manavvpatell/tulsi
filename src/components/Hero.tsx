@@ -14,52 +14,52 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative overflow-hidden bg-[#F4F1EA] border-b border-[#E8E2D7]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-20 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Text Column */}
           <div className="lg:col-span-6 flex flex-col justify-center max-w-xl">
-            <span className="text-xs md:text-sm uppercase tracking-[0.25em] text-[#8C7D6B] font-medium mb-3">
+            <span className="text-[11px] sm:text-sm uppercase tracking-[0.25em] text-[#8C7D6B] font-medium mb-2 sm:mb-3">
               A Unique, Intangible Quality.
             </span>
             
-            <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-[#1A1816] font-normal leading-[1.12] mb-6 tracking-tight text-balance">
+            <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-[#1A1816] font-normal leading-[1.15] mb-4 sm:mb-6 tracking-tight text-balance">
               Perfect Match for Elegant Impression
             </h1>
 
-            <p className="text-stone-600 text-base md:text-lg font-light leading-relaxed mb-8">
+            <p className="text-stone-600 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-6 sm:mb-8">
               Centuries of Indian royal goldsmithing reimagined with contemporary restraint by Tulsi Jewellers. Discover handcrafted 22K hallmarked gold chokers, uncut polki diamonds, and celestial temple heirlooms.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={() => handleShopClick('all')}
-                className="px-8 py-3.5 bg-[#1A1816] text-[#F9F7F2] text-xs font-semibold uppercase tracking-[0.2em] rounded-sm hover:bg-[#33302B] transition-colors shadow-sm"
+                className="w-full sm:w-auto px-7 py-3.5 bg-[#1A1816] text-[#F9F7F2] text-xs font-semibold uppercase tracking-[0.2em] rounded-sm hover:bg-[#33302B] transition-colors shadow-sm text-center"
               >
                 Shop Collection
               </button>
               
               <button
                 onClick={() => handleShopClick('necklaces')}
-                className="px-7 py-3.5 bg-transparent border border-[#1A1816] text-[#1A1816] text-xs font-semibold uppercase tracking-[0.2em] rounded-sm hover:bg-white/60 transition-colors"
+                className="w-full sm:w-auto px-6 py-3.5 bg-transparent border border-[#1A1816] text-[#1A1816] text-xs font-semibold uppercase tracking-[0.2em] rounded-sm hover:bg-white/60 transition-colors text-center"
               >
                 Explore Necklaces
               </button>
             </div>
 
             {/* Quick stats / hallmark notes */}
-            <div className="mt-10 pt-8 border-t border-[#E2DBD0] grid grid-cols-3 gap-4 text-left">
+            <div className="mt-8 pt-6 border-t border-[#E2DBD0] grid grid-cols-3 gap-2 sm:gap-4 text-left">
               <div>
-                <p className="font-editorial text-2xl font-normal text-stone-900">BIS 916</p>
-                <p className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">Hallmarked Pure Gold</p>
+                <p className="font-editorial text-lg sm:text-2xl font-normal text-stone-900">BIS 916</p>
+                <p className="text-[9px] sm:text-[11px] uppercase tracking-wider text-stone-500 mt-0.5 leading-tight">Hallmarked Pure Gold</p>
               </div>
               <div>
-                <p className="font-editorial text-2xl font-normal text-stone-900">100%</p>
-                <p className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">Insured Armored Courier</p>
+                <p className="font-editorial text-lg sm:text-2xl font-normal text-stone-900">100%</p>
+                <p className="text-[9px] sm:text-[11px] uppercase tracking-wider text-stone-500 mt-0.5 leading-tight">Insured Armored Courier</p>
               </div>
               <div>
-                <p className="font-editorial text-2xl font-normal text-stone-900">Certified</p>
-                <p className="text-[11px] uppercase tracking-wider text-stone-500 mt-0.5">IGI & SGL Natural Gems</p>
+                <p className="font-editorial text-lg sm:text-2xl font-normal text-stone-900">Certified</p>
+                <p className="text-[9px] sm:text-[11px] uppercase tracking-wider text-stone-500 mt-0.5 leading-tight">IGI & SGL Gems</p>
               </div>
             </div>
           </div>

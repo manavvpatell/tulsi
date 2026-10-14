@@ -164,7 +164,7 @@ export const AdminPortal: React.FC = () => {
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex border-b border-stone-200 mb-8 gap-8">
+        <div className="flex border-b border-stone-200 mb-6 sm:mb-8 gap-4 sm:gap-8 overflow-x-auto whitespace-nowrap pb-1">
           <button
             onClick={() => setActiveTabLocal('products')}
             className={`pb-3 text-xs uppercase tracking-widest font-semibold transition-colors relative flex items-center gap-2 ${
