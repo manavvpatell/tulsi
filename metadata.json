@@ -1,0 +1,6 @@
+{
+  "name": "Alukas Indian Fine Jewellery",
+  "description": "Luxury Indian fine jewellery catalog featuring handcrafted 22K gold necklaces, diamond rings, and temple earrings with secure checkout, live order tracking, customer reviews, and automated email notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

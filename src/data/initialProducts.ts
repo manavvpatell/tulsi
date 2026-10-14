@@ -1,0 +1,303 @@
+import { Product, Review, Order } from '../types';
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'prod-neck-01',
+    name: 'Aishwarya Kundan & Polki Bridal Choker',
+    category: 'necklaces',
+    price: 245000,
+    originalPrice: 280000,
+    craft: 'Polki & Kundan',
+    goldPurity: '22K',
+    grossWeight: '48.6g',
+    netGoldWeight: '42.1g',
+    stoneDetails: 'Natural Zambian Emerald beads & Uncut Syndicate Polki',
+    image: '/src/assets/images/product_polki_choker_1791946991224.jpg',
+    description: 'A masterpiece of royal Rajputana heritage. Handcrafted in 22-karat hallmarked yellow gold, adorned with shimmering syndicate uncut polki diamonds and vibrant hand-carved emerald drop beads.',
+    rating: 4.9,
+    reviewCount: 38,
+    inStock: true,
+    featured: true,
+    hallmarking: 'BIS 916 Hallmarked & Certified Gemological Authenticity',
+    sku: 'ALU-NCK-POLKI-01'
+  },
+  {
+    id: 'prod-ring-01',
+    name: 'Padmavati Radiant Solitaire Diamond Ring',
+    category: 'rings',
+    price: 135000,
+    originalPrice: 155000,
+    craft: 'Solitaire Diamond',
+    goldPurity: '18K',
+    grossWeight: '8.4g',
+    netGoldWeight: '7.8g',
+    diamondCarat: '1.25 ct (VVS1, E-Color)',
+    stoneDetails: 'Certified Conflict-free Natural Solitaire Diamond',
+    image: '/src/assets/images/product_solitaire_ring_1791946993300.jpg',
+    description: 'An enchanting cocktail ring inspired by Mughal floral vines. A pristine 1.25-carat radiant-cut solitaire set on an intricate 18K gold hand-engraved filigree band.',
+    rating: 5.0,
+    reviewCount: 42,
+    inStock: true,
+    featured: true,
+    hallmarking: 'BIS 750 Hallmarked & IGI Diamond Certificate',
+    sku: 'ALU-RNG-RAD-01'
+  },
+  {
+    id: 'prod-ear-01',
+    name: 'Devangana Temple Bell Ruby Jhumkas',
+    category: 'earrings',
+    price: 98000,
+    originalPrice: 110000,
+    craft: 'Antique Temple',
+    goldPurity: '22K',
+    grossWeight: '22.3g',
+    netGoldWeight: '19.8g',
+    stoneDetails: 'Burmese Pigeon Blood Rubies & South Sea Seed Pearls',
+    image: '/src/assets/images/product_temple_jhumka_1791946992985.jpg',
+    description: 'Traditional temple jewellery revived with South Indian iconography. Crafted in pure 22K yellow gold with antique matte patina, studded with cabochon rubies and tiered pearl seed clusters.',
+    rating: 4.9,
+    reviewCount: 29,
+    inStock: true,
+    featured: true,
+    hallmarking: 'BIS 916 Hallmarked & Traditional Goldsmith Guild Seal',
+    sku: 'ALU-EAR-TEM-01'
+  },
+  {
+    id: 'prod-neck-02',
+    name: 'Mayur Trio Layered Emerald & Ruby Pendant',
+    category: 'necklaces',
+    price: 88000,
+    originalPrice: 99000,
+    craft: '22K Royal Gold',
+    goldPurity: '22K',
+    grossWeight: '18.2g',
+    netGoldWeight: '16.5g',
+    stoneDetails: 'Tear-drop Ruby & Emerald Cut Natural Gemstones',
+    image: '/src/assets/images/category_necklace_banner_1791946992514.jpg',
+    description: 'Three delicate tiers of fine 22K gold chains crowned with bezel-set emerald and ruby gemstone drops. Effortlessly shifts from traditional festivities to contemporary soirees.',
+    rating: 4.8,
+    reviewCount: 21,
+    inStock: true,
+    featured: true,
+    hallmarking: 'BIS 916 Hallmarked',
+    sku: 'ALU-NCK-MAY-02'
+  },
+  {
+    id: 'prod-ring-02',
+    name: 'Noor Rose Gold Eternity Diamond Band',
+    category: 'rings',
+    price: 72000,
+    originalPrice: 82000,
+    craft: 'Rose Gold & Diamonds',
+    goldPurity: '18K',
+    grossWeight: '5.2g',
+    netGoldWeight: '4.8g',
+    diamondCarat: '0.85 ct (VS, G-H Color)',
+    image: '/src/assets/images/product_solitaire_ring_1791946993300.jpg',
+    description: 'Romantic 18K rose gold eternity ring micro-pave set with brilliant-cut diamonds. Smooth comfort fit with hand-polished milgrain edging.',
+    rating: 4.8,
+    reviewCount: 17,
+    inStock: true,
+    featured: false,
+    hallmarking: 'BIS 750 Hallmarked & SGL Certified',
+    sku: 'ALU-RNG-ETR-02'
+  },
+  {
+    id: 'prod-ear-02',
+    name: 'Chandrika Crescent Polki Chandbali Earrings',
+    category: 'earrings',
+    price: 115000,
+    originalPrice: 130000,
+    craft: 'Polki & Kundan',
+    goldPurity: '22K',
+    grossWeight: '28.1g',
+    netGoldWeight: '24.6g',
+    stoneDetails: 'Uncut Diamonds with Fine Pearl Fringe & Green Enamel Meenakari',
+    image: '/src/assets/images/product_temple_jhumka_1791946992985.jpg',
+    description: 'Iconic crescent silhouette crafted with uncut diamonds set in 22K yellow gold foils, backed with exquisite Persian blue and green Meenakari enamel artistry.',
+    rating: 5.0,
+    reviewCount: 31,
+    inStock: true,
+    featured: true,
+    hallmarking: 'BIS 916 Hallmarked & Jaipur Guild Certified',
+    sku: 'ALU-EAR-CHN-02'
+  },
+  {
+    id: 'prod-neck-03',
+    name: 'Suryavanshi Royal Hasli Gold Choker',
+    category: 'necklaces',
+    price: 185000,
+    originalPrice: 205000,
+    craft: '22K Royal Gold',
+    goldPurity: '22K',
+    grossWeight: '36.8g',
+    netGoldWeight: '36.8g',
+    stoneDetails: 'Solid 22K Gold Hand-Chiseled Nakshi Work',
+    image: '/src/assets/images/product_polki_choker_1791946991224.jpg',
+    description: 'A bold, rigid collar Hasli necklace handcrafted by master goldsmiths. Features traditional Nakshi repousse technique depicting royal sunburst and peacocks.',
+    rating: 4.9,
+    reviewCount: 14,
+    inStock: true,
+    featured: false,
+    hallmarking: 'BIS 916 Hallmarked Gold',
+    sku: 'ALU-NCK-HAS-03'
+  },
+  {
+    id: 'prod-ear-03',
+    name: 'Gulabi Meenakari Floral Drop Earrings',
+    category: 'earrings',
+    price: 64000,
+    originalPrice: 72000,
+    craft: '22K Royal Gold',
+    goldPurity: '22K',
+    grossWeight: '14.2g',
+    netGoldWeight: '13.0g',
+    stoneDetails: 'Benaras Pink Enamel & Round Brilliant Diamonds',
+    image: '/src/assets/images/product_temple_jhumka_1791946992985.jpg',
+    description: 'Celebrates the endangered craft of Banaras pink enamel (Gulabi Meenakari) over pure 22K gold, accented with sparkling diamond dewdrops.',
+    rating: 4.7,
+    reviewCount: 19,
+    inStock: true,
+    featured: false,
+    hallmarking: 'BIS 916 Hallmarked',
+    sku: 'ALU-EAR-MEEN-03'
+  },
+  {
+    id: 'prod-ring-03',
+    name: 'Navratna Celestial Heritage Ring',
+    category: 'rings',
+    price: 89000,
+    originalPrice: 98000,
+    craft: 'Antique Temple',
+    goldPurity: '22K',
+    grossWeight: '11.5g',
+    netGoldWeight: '9.8g',
+    stoneDetails: 'Nine Astrological Gemstones: Ruby, Pearl, Coral, Emerald, Sapphire',
+    image: '/src/assets/images/product_solitaire_ring_1791946993300.jpg',
+    description: 'Ancient sacred geometry embodying the nine celestial planetary influences. Each genuine gemstone is consecrated in 22K yellow gold with Vedic precision.',
+    rating: 4.9,
+    reviewCount: 26,
+    inStock: true,
+    featured: false,
+    hallmarking: 'BIS 916 Hallmarked & Certified Vedic Gemological Institute',
+    sku: 'ALU-RNG-NAV-03'
+  }
+];
+
+export const INITIAL_REVIEWS: Review[] = [
+  {
+    id: 'rev-01',
+    productId: 'prod-neck-01',
+    productName: 'Aishwarya Kundan & Polki Bridal Choker',
+    authorName: 'Sunita Mehra',
+    rating: 5,
+    date: 'March 28, 2026',
+    title: 'Exquisite bridal heirloom for my daughter’s wedding',
+    comment: 'The craftsmanship on this choker is breathtaking. The uncut polki diamonds catch the light with unmatched warmth, and the emerald beads have a deep royal green tone. Received the BIS 916 certificate along with insured BlueDart delivery within 3 days. Pure royal luxury!',
+    verifiedPurchase: true,
+    helpfulCount: 34,
+    location: 'Mumbai, Maharashtra'
+  },
+  {
+    id: 'rev-02',
+    productId: 'prod-ring-01',
+    productName: 'Padmavati Radiant Solitaire Diamond Ring',
+    authorName: 'Rohan Kapoor',
+    rating: 5,
+    date: 'April 02, 2026',
+    title: 'Proposed with this ring – She was completely speechless!',
+    comment: 'The floral filigree carving around the 1.25 ct radiant diamond is pure art. The IGI certificate was included, and the sizing was millimeter perfect. Customer support even called to confirm insured transit.',
+    verifiedPurchase: true,
+    helpfulCount: 28,
+    location: 'New Delhi'
+  },
+  {
+    id: 'rev-03',
+    productId: 'prod-ear-01',
+    productName: 'Devangana Temple Bell Ruby Jhumkas',
+    authorName: 'Priya Narayanan',
+    rating: 5,
+    date: 'April 05, 2026',
+    title: 'Authentic temple gold with perfect weight and swing',
+    comment: 'As someone from South India, finding authentic temple jhumkas with authentic antique finish and natural rubies online is rare. Tulsi Jewellers delivered beyond expectations. The pearl drops jingle softly and the gold purity mark is stamped clearly.',
+    verifiedPurchase: true,
+    helpfulCount: 19,
+    location: 'Chennai, Tamil Nadu'
+  },
+  {
+    id: 'rev-04',
+    productId: 'prod-neck-02',
+    productName: 'Mayur Trio Layered Emerald & Ruby Pendant',
+    authorName: 'Ananya Singhania',
+    rating: 5,
+    date: 'April 08, 2026',
+    title: 'Modern Indian luxury at its finest',
+    comment: 'I wear this layered chain both with western cocktail dresses and silk sarees. The craftsmanship is subtle yet unmistakably precious. The email shipping updates with real-time BlueDart tracking gave total peace of mind.',
+    verifiedPurchase: true,
+    helpfulCount: 15,
+    location: 'Bengaluru, Karnataka'
+  }
+];
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: 'TJ-89241',
+    date: 'April 11, 2026',
+    items: [
+      {
+        productId: 'prod-ear-01',
+        name: 'Devangana Temple Bell Ruby Jhumkas',
+        price: 98000,
+        quantity: 1,
+        image: '/src/assets/images/product_temple_jhumka_1791946992985.jpg',
+        category: 'earrings',
+        goldPurity: '22K'
+      }
+    ],
+    subtotal: 98000,
+    tax: 2940, // 3% GST
+    shippingFee: 0,
+    discount: 9800, // 10% promo
+    promoCode: 'ROYAL10',
+    total: 91140,
+    status: 'shipped',
+    trackingNumber: 'BLU-9842019IN',
+    courierName: 'BlueDart Apex Armored Secure',
+    estimatedDelivery: 'April 15, 2026',
+    shippingAddress: {
+      fullName: 'Manav Sharma',
+      email: 'manavgameium@gmail.com',
+      phone: '+91 98201 45892',
+      street: 'Flat 402, Royal Palms, 18th Main Road, Indiranagar',
+      landmark: 'Near Defence Colony Post Office',
+      city: 'Bengaluru',
+      state: 'Karnataka',
+      pincode: '560038',
+      country: 'India'
+    },
+    paymentMethod: 'UPI',
+    paymentStatus: 'Paid',
+    statusHistory: [
+      {
+        status: 'confirmed',
+        timestamp: 'Apr 11, 2026 · 10:24 AM',
+        description: 'Payment authorized via UPI. Order registered in master gold ledger.'
+      },
+      {
+        status: 'crafting',
+        timestamp: 'Apr 12, 2026 · 11:30 AM',
+        description: 'Master goldsmith finished inspection; BIS 916 laser hallmarking verified.'
+      },
+      {
+        status: 'quality_check',
+        timestamp: 'Apr 13, 2026 · 02:15 PM',
+        description: 'Gemological clarity check passed. Velvet presentation box sealed in tamper-evident vault packaging.'
+      },
+      {
+        status: 'shipped',
+        timestamp: 'Apr 14, 2026 · 09:40 AM',
+        description: 'Dispatched via BlueDart Apex Armored Courier. Transit insurance activated under policy #SEC-8821.'
+      }
+    ]
+  }
+];
